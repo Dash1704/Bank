@@ -12,6 +12,10 @@ class Bank {
     this.balance += money
   }
 
+  withdraw(funds){
+    this.balance -= funds
+  }
+
 }
 
 module.exports = Bank

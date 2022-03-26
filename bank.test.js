@@ -17,4 +17,12 @@ describe(Bank, () => {
     })
   })
 
+  describe('withdraw', () => {
+    it('should withdraw money from the bank', () => {
+      const bank = new Bank
+      bank.deposit(20)
+      bank.withdraw(10)
+      expect(bank.getBalance()).toEqual(10)
+    })
+  })
 })
