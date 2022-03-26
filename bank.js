@@ -1,7 +1,15 @@
 class Bank {
 
+  constructor(){
+    this.balance = 0
+  }
+
   getBalance(){
-    return 0
+    return this.balance
+  }
+
+  deposit(money){
+    this.balance += money
   }
 
 }
