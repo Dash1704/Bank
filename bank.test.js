@@ -1,6 +1,7 @@
 const Bank = require('./bank')
 
 
+
 describe(Bank, () => {
   describe('getBalance', () => {
     it('should give a balance of 0', () => {
@@ -23,6 +24,13 @@ describe(Bank, () => {
       bank.deposit(20)
       bank.withdraw(10)
       expect(bank.getBalance()).toEqual(10)
+    })
+  })
+
+  describe('this statement', () => {
+    it('should equal an empty array to begin with', () => {
+      const bank = new Bank
+      expect(bank.statement).toEqual([])
     })
   })
 })
