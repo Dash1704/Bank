@@ -5,12 +5,17 @@ class Bank {
     this.statement = []
   }
 
+  getStatement(){
+    return this.statement
+  }
+
   getBalance(){
     return this.balance
   }
 
   deposit(money){
     this.balance += money
+    this.statement.push("Deposited: " + money)
   }
 
   withdraw(funds){
