@@ -20,7 +20,7 @@ describe(Bank, () => {
     it('should show a deposit in the statement', () => {
       const bank = new Bank
       bank.deposit(5)
-      expect(bank.getStatement()).toEqual(["Deposited: 5"])
+      expect(bank.getStatement()).toEqual(["Deposited: 5", "Balance: 5"])
     })
   })
 
@@ -31,10 +31,14 @@ describe(Bank, () => {
       bank.withdraw(10)
       expect(bank.getBalance()).toEqual(10)
     })
+
+    // it('should show a withdrawal in the statement', () => {
+    //   const bank = new Bank
+    // })
   })
 
   describe('getStatement', () => {
-    it('should equal an empty array to begin with', () => {
+    it('should show just the balance to begin with', () => {
       const bank = new Bank
       expect(bank.getStatement()).toEqual([])
     })

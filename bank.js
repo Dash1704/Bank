@@ -16,6 +16,7 @@ class Bank {
   deposit(money){
     this.balance += money
     this.statement.push("Deposited: " + money)
+    this.statement.push("Balance: " + this.balance)
   }
 
   withdraw(funds){
