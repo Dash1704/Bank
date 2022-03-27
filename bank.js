@@ -21,6 +21,8 @@ class Bank {
 
   withdraw(funds){
     this.balance -= funds
+    this.statement.push("Withdrew: " + funds)
+    this.statement.push("Balance: " + this.balance)
   }
 
 }

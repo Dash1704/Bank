@@ -32,9 +32,12 @@ describe(Bank, () => {
       expect(bank.getBalance()).toEqual(10)
     })
 
-    // it('should show a withdrawal in the statement', () => {
-    //   const bank = new Bank
-    // })
+    it('should show a withdrawal in the statement', () => {
+      const bank = new Bank
+      bank.deposit(10)
+      bank.withdraw(5)
+      expect(bank.getStatement()).toEqual(["Deposited: 10", "Balance: 10", "Withdrew: 5", "Balance: 5"])
+    })
   })
 
   describe('getStatement', () => {
