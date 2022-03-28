@@ -11,7 +11,7 @@ class Bank {
   getStatement(){
     console.log(this.header)
     const arr = this.statement
-    console.log(arr.join(" || "))
+    console.log(arr.join("\r\n"))
     
   }
 
@@ -21,11 +21,8 @@ class Bank {
 
   deposit(money, transactedDate){
     const date = transactedDate
-    this.statement.push(date)
     this.balance += money
-    this.statement.push(money)
-    this.statement.push(this.balance)
-   
+    this.statement.push(`${date} || ${money} || ${this.balance}`)
   }
 
   withdraw(funds, transactedDate){
