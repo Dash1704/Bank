@@ -13,10 +13,12 @@ class Bank {
     return this.balance
   }
 
-  deposit(money){
+  deposit(money, transactedDate){
     this.balance += money
     this.statement.push("Deposited: " + money)
     this.statement.push("Balance: " + this.balance)
+    const date = transactedDate
+    this.statement.push(date)
   }
 
   withdraw(funds){
@@ -24,7 +26,6 @@ class Bank {
     this.statement.push("Withdrew: " + funds)
     this.statement.push("Balance: " + this.balance)
   }
-
 }
 
 module.exports = Bank
