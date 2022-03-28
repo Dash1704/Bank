@@ -12,6 +12,7 @@ class Bank {
     console.log(this.header)
     const arr = this.statement
     console.log(arr.join(" || "))
+    
   }
 
   getBalance(){
@@ -37,4 +38,4 @@ class Bank {
   }
 }
 
-module.exports = Ban
+module.exports = Bank

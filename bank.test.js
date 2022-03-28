@@ -18,7 +18,8 @@ describe(Bank, () => {
     it('should show a deposit in the statement', () => {
       const bank = new Bank
       bank.deposit(5, "01/01/2022")
-      expect(bank.getStatement()).toEqual([5, 5, "01/01/2022"])
+      expect(bank.getStatement()).toBe(
+        "Date || Credit/Debit || Balance 01/01/2022 || 5 || 5")
     })
   })
 
@@ -34,15 +35,15 @@ describe(Bank, () => {
       const bank = new Bank
       bank.deposit(10, "28/03/2022")
       bank.withdraw(5, "01/01/2022")
-      expect(bank.getStatement()).toEqual([
-        10, 10, "28/03/2022", 5, 5, "01/01/2022"])
+      expect(bank.getStatement()).toEqual(
+        "Date || Credit/Debit || Balance 28/03/2022 || 10 || 10 || 01/01/2022 || 5 || 5")
     })
   })
 
   describe('getStatement', () => {
     it('should show just the balance to begin with', () => {
       const bank = new Bank
-      expect(bank.getStatement()).toEqual([])
+      expect(bank.getStatement()).toEqual("")
     })
   })
 })
