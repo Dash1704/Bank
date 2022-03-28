@@ -2,11 +2,16 @@ class Bank {
 
   constructor(){
     this.balance = 0
+    this.header = "Date || Credit/Debit || Balance"
     this.statement = []
   }
 
+
+
   getStatement(){
-    return this.statement
+    console.log(this.header)
+    const arr = this.statement
+    console.log(arr.join(" || "))
   }
 
   getBalance(){
@@ -14,19 +19,21 @@ class Bank {
   }
 
   deposit(money, transactedDate){
-    this.balance += money
-    this.statement.push("Deposited: " + money)
-    this.statement.push("Balance: " + this.balance)
     const date = transactedDate
     this.statement.push(date)
+    this.balance += money
+    this.statement.push(money)
+    this.statement.push(this.balance)
+   
   }
 
   withdraw(funds, transactedDate){
-    this.balance -= funds
-    this.statement.push("Withdrew: " + funds)
-    this.statement.push("Balance: " + this.balance)
     const date = transactedDate
     this.statement.push(date)
+    this.balance -= funds
+    this.statement.push(funds)
+    this.statement.push(this.balance)
+   
   }
 }
 
