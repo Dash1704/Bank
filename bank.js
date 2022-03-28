@@ -6,8 +6,6 @@ class Bank {
     this.statement = []
   }
 
-
-
   getStatement(){
     console.log(this.header)
     const arr = this.statement
@@ -25,13 +23,10 @@ class Bank {
     this.statement.push(`${date} || ${money} || ${this.balance}`)
   }
 
-  withdraw(funds, transactedDate){
+  withdraw(money, transactedDate){
     const date = transactedDate
-    this.statement.push(date)
-    this.balance -= funds
-    this.statement.push(funds)
-    this.statement.push(this.balance)
-   
+    this.balance -= money
+    this.statement.push(`${date} || ${money} || ${this.balance}`)
   }
 }
 
