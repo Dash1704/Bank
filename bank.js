@@ -37,4 +37,4 @@ class Bank {
   }
 }
 
-module.exports = Bank
+module.exports = Ban
