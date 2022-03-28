@@ -36,7 +36,7 @@ describe(Bank, () => {
       bank.deposit(10, "28/03/2022")
       bank.withdraw(5, "01/01/2022")
       expect(bank.getStatement()).toEqual(
-        "Date || Credit/Debit || Balance 28/03/2022 || 10 || 10 || 01/01/2022 || 5 || 5")
+        "Date || Credit/Debit || Balance 28/03/2022 10 || 10 01/01/2022 || 5 || 5")
     })
   })
 

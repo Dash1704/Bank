@@ -17,14 +17,12 @@ class Bank {
     return this.balance
   }
 
-  deposit(money, transactedDate){
-    const date = transactedDate
+  deposit(money, date){
     this.balance += money
     this.statement.push(`${date} || ${money} || ${this.balance}`)
   }
 
-  withdraw(money, transactedDate){
-    const date = transactedDate
+  withdraw(money, date){
     this.balance -= money
     this.statement.push(`${date} || ${money} || ${this.balance}`)
   }
