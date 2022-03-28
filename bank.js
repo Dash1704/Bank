@@ -8,9 +8,8 @@ class Bank {
 
   getStatement(){
     console.log(this.header)
-    const arr = this.statement
-    console.log(arr.join("\r\n"))
-    
+    const statement = this.statement
+    console.log(statement.join("\r\n"))
   }
 
   getBalance(){
