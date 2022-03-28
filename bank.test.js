@@ -33,9 +33,9 @@ describe(Bank, () => {
     it('should show a withdrawal in the statement', () => {
       const bank = new Bank
       bank.deposit(10, "28/03/2022")
-      bank.withdraw(5)
+      bank.withdraw(5, "01/01/2022")
       expect(bank.getStatement()).toEqual([
-        "Deposited: 10", "Balance: 10", "28/03/2022", "Withdrew: 5", "Balance: 5"])
+        "Deposited: 10", "Balance: 10", "28/03/2022", "Withdrew: 5", "Balance: 5", "01/01/2022"])
     })
   })
 
@@ -44,10 +44,5 @@ describe(Bank, () => {
       const bank = new Bank
       expect(bank.getStatement()).toEqual([])
     })
-  })
-
-
-
-
   })
 })

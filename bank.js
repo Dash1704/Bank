@@ -21,10 +21,12 @@ class Bank {
     this.statement.push(date)
   }
 
-  withdraw(funds){
+  withdraw(funds, transactedDate){
     this.balance -= funds
     this.statement.push("Withdrew: " + funds)
     this.statement.push("Balance: " + this.balance)
+    const date = transactedDate
+    this.statement.push(date)
   }
 }
 
