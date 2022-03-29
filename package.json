@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "esbuild": "^0.14.2",
     "eslint": "^8.12.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jest-change-matchers": "^1.0.1"
   }
 }

@@ -6,6 +6,10 @@ class Bank {
     this.statement = []
   }
 
+  printStatement(){
+    return this.getStatement()
+  }
+
   getStatement(){
     console.log(this.header)
     const statement = this.statement
@@ -24,6 +28,12 @@ class Bank {
   withdraw(money, date){
     this.balance -= money
     this.statement.push(`${date} || ${money} || ${this.balance}`)
+  }
+
+  getDate(){
+    var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    return date
   }
 }
 

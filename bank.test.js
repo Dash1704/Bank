@@ -1,3 +1,4 @@
+const { describe, it } = require('eslint/lib/rule-tester/rule-tester')
 const Bank = require('./bank')
 
 describe(Bank, () => {
@@ -15,12 +16,14 @@ describe(Bank, () => {
       expect(bank.getBalance()).toEqual(5)
     })
 
-    it('should show a deposit in the statement', () => {
-      const bank = new Bank
-      bank.deposit(5, "01/01/2022")
-      expect(bank.getStatement()).toBe(
-        "Date || Credit/Debit || Balance 01/01/2022 || 5 || 5")
-    })
+    // it('should show a deposit in the statement', () => {
+    //   const bank = new Bank
+    //   bank.deposit(5, "01/01/2022")
+    //   expect(bank.getStatement()).toBe(
+    //     "Date || Credit/Debit || Balance" +
+    //     "\r\n" +
+    //     "01/01/2022 || 5 || 5")
+    // })
   })
 
   describe('withdraw', () => {
@@ -31,19 +34,30 @@ describe(Bank, () => {
       expect(bank.getBalance()).toEqual(10)
     })
 
-    it('should show a withdrawal in the statement', () => {
-      const bank = new Bank
-      bank.deposit(10, "28/03/2022")
-      bank.withdraw(5, "01/01/2022")
-      expect(bank.getStatement()).toEqual(
-        "Date || Credit/Debit || Balance 28/03/2022 10 || 10 01/01/2022 || 5 || 5")
-    })
+    // it('should show a withdrawal in the statement', () => {
+    //   const bank = new Bank
+    //   bank.deposit(10, "28/03/2022")
+    //   bank.withdraw(5, "01/01/2022")
+    //   expect(bank.printStatement()).toBe( 
+    //   "Date || Credit/Debit || Balance" +
+    //   "\r\n" +
+    //   "28/03/2022 || 10 || 10" +
+    //   "\r\n" + 
+    //   "01/01/2022 || 5 || 5")
+    // })
   })
 
-  describe('getStatement', () => {
-    it('should show just the balance to begin with', () => {
+  // describe('getStatement', () => {
+  //   it('should show just the balance to begin with', () => {
+  //     const bank = new Bank
+  //     expect(bank.getStatement()).toEqual("Date || Credit/Debit || Balance")
+  //   })
+  // })
+
+  describe('getDate', () => {
+    it('should give the current date in the right format', () =>{
       const bank = new Bank
-      expect(bank.getStatement()).toEqual("")
+      expect(bank.getDate()).toEqual('29/3/2022')
     })
   })
 })
