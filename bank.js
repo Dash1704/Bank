@@ -1,3 +1,6 @@
+const today = new Date();
+const date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+
 class Bank {
 
   constructor(){
@@ -20,20 +23,14 @@ class Bank {
     return this.balance
   }
 
-  deposit(money, date){
+  deposit(money){
     this.balance += money
-    this.statement.push(`${date} || ${money} || ${this.balance}`)
+    this.statement.push(`${date} || ${money.toFixed(2)} || ${this.balance.toFixed(2)}`)
   }
 
-  withdraw(money, date){
+  withdraw(money){
     this.balance -= money
-    this.statement.push(`${date} || ${money} || ${this.balance}`)
-  }
-
-  getDate(){
-    var today = new Date();
-    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-    return date
+    this.statement.push(`${date} || ${money.toFixed(2)} || ${this.balance.toFixed(2)}`)
   }
 }
 

@@ -54,10 +54,5 @@ describe(Bank, () => {
   //   })
   // })
 
-  describe('getDate', () => {
-    it('should give the current date in the right format', () =>{
-      const bank = new Bank
-      expect(bank.getDate()).toEqual('29/3/2022')
-    })
-  })
+
 })
