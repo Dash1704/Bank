@@ -10,7 +10,7 @@ Below is how the app runs, it prints out the transactions made after the user ha
 
 ## Requirements
 
-- To run the program please clone the repo from github at 
+- To run the program please clone the repo from github at https://github.com/Dash1704/Bank.git
 - Ensure you have node installed: guide here https://nodejs.org/en/download/
 - cd into the bank_tech_test repository and type ```npm install``` in the terminal
 - To run the program type ```node```
