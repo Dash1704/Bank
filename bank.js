@@ -7,6 +7,8 @@ class Bank {
     this.balance = 0
     this.header = "Date || Credit/Debit || Balance"
     this.statement = []
+    this.money = 0
+    this.date = []
   }
 
   printStatement(){
@@ -14,7 +16,8 @@ class Bank {
   }
 
   getStatement(){
-    console.log(this.header)
+    const header = this.header
+    console.log(header)
     const statement = this.statement
     console.log(statement.join("\r\n"))
   }
@@ -25,12 +28,16 @@ class Bank {
 
   deposit(money){
     this.balance += money
-    this.statement.push(`${date} || ${money.toFixed(2)} || ${this.balance.toFixed(2)}`)
+    this.money += money
+    this.statement.push(`${date} || ${this.money.toFixed(2)} || ${this.balance.toFixed(2)}`)
+    this.money = 0
   }
 
   withdraw(money){
     this.balance -= money
-    this.statement.push(`${date} || ${money.toFixed(2)} || ${this.balance.toFixed(2)}`)
+    this.money += money
+    this.statement.push(`${date} || ${this.money.toFixed(2)} || ${this.balance.toFixed(2)}`)
+    this.money = 0
   }
 }
 
